@@ -1,1 +1,217 @@
+/* 
+------------------------------------------------------
+                        BASE 
+------------------------------------------------------
+most of this is done with purecss's normalize.css
+*/
 
+
+/*  VARIABLES */
+:root {
+    --main-bg-color: #F0EFEA; /* chiffon */
+    --second-bg-color: #6FB98F; /* smoke */
+    --primary-color: #021C1E; /* cherry */
+    --accent-color: #2C7873; /* berry */
+    /* used like = var(--main-bg-color) */
+    --large-font-size: ;
+    --medium-font-size: ;
+    --small-font-size: 0.75em;
+
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: 'Merriweather', Georgia, serif;
+}
+
+footer {
+    background-color: black;
+    color: var(--main-bg-color);
+    font-size: var(--small-font-size);
+}
+
+h1 { /* banner headers */
+    font-weight: 700;
+}
+
+h2 { /* main quote */
+    font-family: 'Roboto Mono', Consolas, monospace;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+h3 {
+    font-style: 500;
+    font-size: 1.5em;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    margin: 1em;
+}
+
+/*  FONTS  
+
+font-family: 'Merriweather', Georgia, serif;
+font-family: 'Roboto Mono', Consolas, monospace;
+
+*/
+
+/*  IMAGES */
+.icon {
+    height: 80px;
+    width: 80px;
+    
+    color: var(--accent-color);
+}
+
+.testimonial {
+ font-style: italic;
+}
+
+.case-study-img {
+    height: 160px;
+    width: 160px;
+    text-align: center;
+    clip-path: circle();
+}
+
+
+.profile {
+    height: 300px;
+    width: 300px;
+
+    clip-path: circle();
+}
+
+.profile:hover {
+    clip-path: unset;
+}
+
+/* 
+------------------------------------------------------
+                        LAYOUT 
+------------------------------------------------------
+*/
+
+
+/*   MAIN CSS GRID    */
+
+.l-grid-container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto 3rem;
+  grid-template-areas:
+    "l-hero"
+    "l-reasons"
+    "l-testimonials"
+    "l-case-studies"
+    "l-contact"
+    "l-footer";
+
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.l-footer { grid-area: l-footer; } 
+/* this is the only section that doesn't have a sub grid */
+
+/*   HERO SUB GRID    */
+
+.l-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "l-profile-img" "l-banner-text";
+  grid-area: l-hero;
+}
+
+.l-profile-img { grid-area: l-profile-img; }
+
+.l-banner-text { grid-area: l-banner-text; }
+
+.l-reasons {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "l-creative-visual"
+    "l-communication"
+    "l-code"
+    "l-money-back";
+  grid-area: l-reasons;
+
+  text-align: center;
+}
+
+.l-creative-visual { grid-area: l-creative-visual; }
+
+.l-communication { grid-area: l-communication; }
+
+.l-code { grid-area: l-code; }
+
+.l-money-back { grid-area: l-money-back; }
+
+/*   TESTIMONIAL SUB GRID    */
+
+.l-testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "l-testimonial-header"
+    "l-holy-cherrys-testimonial"
+    "l-pleural-testimonial"
+    "l-wes-storm-testimonial";
+  grid-area: l-testimonials;
+}
+
+.l-testimonial-header { grid-area: l-testimonial-header; }
+
+.l-holy-cherrys-testimonial { grid-area: l-holy-cherrys-testimonial; }
+
+.l-pleural-testimonial { grid-area: l-pleural-testimonial; }
+
+.l-wes-storm-testimonial { grid-area: l-wes-storm-testimonial; }
+
+/*   CASE STUDY SUB GRID    */
+
+.l-case-studies {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "l-case-study-header"
+    "l-alpha-asif-case-study"
+    "l-pleural-case-study"
+    "l-holy-cherrys-case-study";
+  grid-area: l-case-studies;
+}
+
+.l-case-study-header { grid-area: l-case-study-header; }
+
+.l-alpha-asif-case-study { grid-area: l-alpha-asif-case-study; }
+
+.l-pleural-case-study { grid-area: l-pleural-case-study; }
+
+.l-holy-cherrys-case-study { grid-area: l-holy-cherrys-case-study; }
+
+
+/*   CONTACT SUB GRID    */
+
+.l-contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "l-contact-header"
+    "l-contact-details";
+  grid-area: l-contact;
+}
+
+.l-contact-header { grid-area: l-contact-header; }
+
+.l-contact-details { grid-area: l-contact-details; }
